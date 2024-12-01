@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo "Project Name: ${env.PROJECT_NAME}"
                 ws("${env.REPO_PATH}") {
-                    git branch: 'main', credentialsId: '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', url: 'https://github.com/ajadlitan/GreenCodeSQLite.git'
+                    git branch: 'main', credentialsId: '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', url: 'https://github.com/ajadlitan/GreenCodeSQLite.git'
                 }
             }
         }
