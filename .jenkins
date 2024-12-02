@@ -24,7 +24,6 @@ pipeline {
                 dir("${env.REPO_PATH}") {
                     catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                         sh "${env.PYTHON_PATH} server_emissions.py"
-			sh "chmod -R 777 ${WORKSPACE}"
                     }
                 }
             }
@@ -34,7 +33,6 @@ pipeline {
                 dir("${env.REPO_PATH}") {
                     catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                         sh "${env.PYTHON_PATH} GreenCodeRefiner.py"
-			sh "chmod -R 777 ${WORKSPACE}"
                     }
                 }
             }
@@ -46,7 +44,6 @@ pipeline {
                     withEnv(["PYTEST=${env.PYTEST_PATH}"]) {
                         catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                             sh "${env.PYTHON_PATH} track_emissions.py"
-			    sh "chmod -R 777 ${WORKSPACE}"
                         }
                     }
                 }
